@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setQuestions, answerQuestion, finishQuiz } from "../store/quizSlice";
 import useCountdown from "../hooks/useCountdown";
-
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import Button from "../components/Button";

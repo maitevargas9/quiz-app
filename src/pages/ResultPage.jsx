@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { resetQuiz } from "../store/quizSlice";
 import { saveHighscore } from "../utils/storage";
-
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import Button from "../components/Button";
@@ -18,6 +17,12 @@ export default function ResultPage() {
     navigate("/");
   };
 
+  const handleHighscores = () => {
+    saveHighscore(score);
+    dispatch(resetQuiz());
+    navigate("/highscores");
+  };
+
   return (
     <Layout>
       <Card>
@@ -26,7 +31,10 @@ export default function ResultPage() {
           Du hast <strong>{score}</strong> von{" "}
           <strong>{questions.length}</strong> richtig!
         </p>
-        <Button onClick={handleRestart}>Neu starten</Button>
+        <div className="flex gap-2">
+          <Button onClick={handleRestart}>Neu starten</Button>
+          <Button onClick={handleHighscores}>Highscores ansehen</Button>
+        </div>
       </Card>
     </Layout>
   );

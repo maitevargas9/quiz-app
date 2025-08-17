@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { saveProfile } from "../utils/storage";
-
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import Button from "../components/Button";
