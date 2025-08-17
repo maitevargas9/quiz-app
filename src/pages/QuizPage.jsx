@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { setQuestions, answerQuestion, finishQuiz } from "../store/quizSlice";
 import useCountdown from "../hooks/useCountdown";
 
+import Layout from "../components/Layout";
+import Card from "../components/Card";
+import Button from "../components/Button";
+import ProgressBar from "../components/ProgressBar";
+
 export default function QuizPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,27 +42,33 @@ export default function QuizPage() {
     }
   }
 
-  if (!questions.length) return <p>Lade Fragen...</p>;
-
+  if (!questions.length) return <p>Lade Frage...</p>;
   const q = questions[currentIndex];
 
   return (
-    <div className="p-8 text-center">
-      <h2 className="text-xl mb-4">
-        {q.question}
-      </h2>
-      <p className="mb-2">
-        Zeit: {timeLeft}s
-      </p>
-      {q.options.map((opt, i) =>
-        <button
-          key={i}
-          onClick={() => handleAnswer(opt === q.answer)}
-          className="block w-full bg-gray-200 p-2 my-2 rounded"
-        >
-          {opt}
-        </button>
-      )}
-    </div>
+    <Layout>
+      <ProgressBar value={currentIndex} max={questions.length} />
+
+      <Card>
+        <h2 className="text-xl mb-4">
+          {q.question}
+        </h2>
+        <p className="mb-4 text-gray-600">
+          ⏳ {timeLeft}s
+        </p>
+
+        <div className="space-y-2">
+          {q.options.map((opt, i) =>
+            <Button
+              key={i}
+              onClick={() => handleAnswer(opt === q.answer)}
+              className="w-full"
+            >
+              {opt}
+            </Button>
+          )}
+        </div>
+      </Card>
+    </Layout>
   );
 }

@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { resetQuiz } from "../store/quizSlice";
 import { saveHighscore } from "../utils/storage";
 
+import Layout from "../components/Layout";
+import Card from "../components/Card";
+import Button from "../components/Button";
+
 export default function ResultPage() {
   const { score, questions } = useSelector(state => state.quiz);
   const navigate = useNavigate();
@@ -15,17 +19,15 @@ export default function ResultPage() {
   };
 
   return (
-    <div className="p-8 text-center">
-      <h1 className="text-2xl font-bold">Ergebnis</h1>
-      <p>
-        Du hast {score} von {questions.length} richtig!
-      </p>
-      <button
-        onClick={handleRestart}
-        className="bg-green-500 text-white px-4 py-2 rounded mt-4"
-      >
-        Neu starten
-      </button>
-    </div>
+    <Layout>
+      <Card>
+        <h1 className="text-2xl mb-4">Ergebnis</h1>
+        <p className="mb-4">
+          Du hast <strong>{score}</strong> von{" "}
+          <strong>{questions.length}</strong> richtig!
+        </p>
+        <Button onClick={handleRestart}>Neu starten</Button>
+      </Card>
+    </Layout>
   );
 }

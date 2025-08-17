@@ -4,7 +4,7 @@ const initialState = {
   questions: [],
   currentIndex: 0,
   score: 0,
-  status: "idle" 
+  status: false
 };
 
 const quizSlice = createSlice({
@@ -13,6 +13,9 @@ const quizSlice = createSlice({
   reducers: {
     setQuestions: (state, action) => {
       state.questions = action.payload;
+      state.currentIndex = 0;
+      state.score = 0;
+      state.finished = false;
     },
     answerQuestion: (state, action) => {
       const { isCorrect } = action.payload;
