@@ -5,8 +5,43 @@
     "answer": "Berlin"
   },
   {
-    "question": "Welches Jahr begann der 2. Weltkrieg?",
-    "options": ["1939", "1945", "1914", "1920"],
-    "answer": "1939"
+    "question": "Welcher Planet ist der Sonne am nächsten?",
+    "options": ["Merkur", "Venus", "Mars", "Erde"],
+    "answer": "Merkur"
+  },
+  {
+    "question": "Wer malte die Mona Lisa?",
+    "options": ["Leonardo da Vinci", "Michelangelo", "Picasso", "Rembrandt"],
+    "answer": "Leonardo da Vinci"
+  },
+  {
+    "question": "Wie viele Bundesländer hat Deutschland?",
+    "options": ["14", "16", "18", "20"],
+    "answer": "16"
+  },
+  {
+    "question": "Welche Programmiersprache wird für React hauptsächlich verwendet?",
+    "options": ["Python", "Java", "JavaScript", "C#"],
+    "answer": "JavaScript"
+  },
+  {
+    "question": "Wie viele Kontinente gibt es auf der Erde?",
+    "options": ["5", "6", "7", "8"],
+    "answer": "7"
+  },
+  {
+    "question": "Was ist die chemische Formel von Wasser?",
+    "options": ["CO2", "H2O", "O2", "NaCl"],
+    "answer": "H2O"
+  },
+  {
+    "question": "Wer war der erste Mensch auf dem Mond?",
+    "options": ["Neil Armstrong", "Buzz Aldrin", "Juri Gagarin", "Michael Collins"],
+    "answer": "Neil Armstrong"
+  },
+  {
+    "question": "Welche Stadt nennt man auch 'die ewige Stadt'?",
+    "options": ["Athen", "Rom", "Kairo", "Istanbul"],
+    "answer": "Rom"
   }
 ]
